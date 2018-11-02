@@ -11,9 +11,12 @@ class ColorTracker:
     tracking_mask = True
     original = True
 
-    def __init__(self, lower_color_boundary, upper_color_boundary):
+    camera_parameters = None
+
+    def __init__(self, lower_color_boundary, upper_color_boundary, camera_parameters=None):
         self.lower_color_boundary = lower_color_boundary
         self.upper_color_boundary = upper_color_boundary
+        self.camera_parameters = camera_parameters
 
     def track_video(self, file_name, initial_frame):
         self.current_frame_number = 0
@@ -45,6 +48,10 @@ class ColorTracker:
                 self.update_progress_bar()
 
             if ret:
+                if self.camera_parameters is not None:
+                    image = cv2.undistort(image, self.camera_parameters.camera_matrix,
+                                          self.camera_parameters.dist_coefs)
+
                 hsv_frame = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
                 color_tracking_mask = cv2.inRange(hsv_frame, self.lower_color_boundary, self.upper_color_boundary)
 
