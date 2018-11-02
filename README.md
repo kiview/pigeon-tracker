@@ -13,6 +13,12 @@ For getting mp4 playback to work, I've setup the conda environment with
 conda install -c loopbio -c conda-forge -c pkgw-forge ffmpeg gtk2 opencv
 ```
 
+On *Windows* you can ommit the `gtk2` package
+```
+conda install -c loopbio -c conda-forge -c pkgw-forge ffmpeg gtk2 opencv
+```
+
+
 The hard part was getting a working opencv version that's compiled with gtk2 and ffmpeg support.
 
 ## Jupyter
