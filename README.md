@@ -1,4 +1,4 @@
-# pigeon-tracker
+# pigeon-tracker [![Build Status](https://travis-ci.com/neslihanedes/pigeon-tracker.svg?branch=master)](https://travis-ci.com/neslihanedes/pigeon-tracker)
 Use Python and OpenCV to track pigeons for automated analysis of animal behavior experiments.
 
 This repository currently mainly consists of some basic code for exploring the OpenCV capabilities.
