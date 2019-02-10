@@ -22,5 +22,8 @@ There is a kind of working Jupyter example, run it like this:
 ```
 jupyter notebook example_notebook.ipynb 
 ```
-
 Rendering of the video is very slow though, so it's only recommended for demo purposes.
+
+## Example Videos
+Example videos are managed by [git-lfs](https://git-lfs.github.com/). They can be found under `example-videos/` and can 
+be retrieved using git-lfs as well (which should happen automatically if correctly installed on the machine).

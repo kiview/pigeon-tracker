@@ -1,5 +1,3 @@
-import os
-
 import cv2
 
 
@@ -12,6 +10,7 @@ class ColorTracker:
     hsv = True
     tracking_mask = True
     original = True
+    scaling = 1.0
 
     def __init__(self, lower_color_boundary, upper_color_boundary):
         self.lower_color_boundary = lower_color_boundary
@@ -47,6 +46,10 @@ class ColorTracker:
                 self.update_progress_bar()
 
             if ret:
+
+                if self.scaling < 1.0:
+                    image = cv2.resize(image, None, fx=self.scaling, fy=self.scaling, interpolation=cv2.INTER_LINEAR)
+
                 hsv_frame = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
                 color_tracking_mask = cv2.inRange(hsv_frame, self.lower_color_boundary, self.upper_color_boundary)
 
