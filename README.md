@@ -15,7 +15,7 @@ conda install -c loopbio -c conda-forge -c pkgw-forge ffmpeg gtk2 opencv
 
 On *Windows* you can ommit the `gtk2` package when using [Anaconda 5.3 Windows Installer](https://www.anaconda.com/download/)
 ```
-conda install -c loopbio -c conda-forge -c pkgw-forge ffmpeg gtk2 opencv
+conda install -c loopbio -c conda-forge -c pkgw-forge ffmpeg opencv
 ```
 
 
