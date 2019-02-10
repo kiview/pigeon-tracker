@@ -1,8 +1,5 @@
 services:
   - docker
 
-before_install:
-- git lfs pull
-
 script:
-- docker run -ti -v $(pwd):/pigeon-tracker --workdir pigeon-tracker taubenmaedchen/pigeon-tracker python example_single_video_process.py
+- docker run -ti -v $(pwd):/pigeon-tracker --workdir /pigeon-tracker taubenmaedchen/pigeon-tracker python example_single_video_process.py
