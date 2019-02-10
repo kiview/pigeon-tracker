@@ -1,0 +1,10 @@
+language: python
+
+services:
+  - docker
+
+before_install:
+- git lfs pull
+
+script:
+- docker run -ti taubenmaedchen/pigeon-tracker -v $(pwd):/pigeon-tracker --workdir pigeon-tracker python example_single_video_process.py
