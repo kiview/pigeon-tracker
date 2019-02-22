@@ -21,9 +21,6 @@ RUN apt-get update && \
         ffmpeg \
         x264
 
-
-RUN pip install numpy
-
 WORKDIR /
 ENV OPENCV_VERSION="3.4.2"
 RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
@@ -52,3 +49,5 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
     && make install \
     && rm /${OPENCV_VERSION}.zip \
     && rm -r /opencv-${OPENCV_VERSION}
+
+RUN pip install numpy matplotlib jupyterlab

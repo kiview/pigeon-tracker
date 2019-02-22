@@ -1,6 +1,15 @@
 import cv2
 
 
+def show_frame(file_name, frame):
+    cap = cv2.VideoCapture(file_name)
+    cap.set(cv2.CAP_PROP_POS_FRAMES, frame)
+
+    result_tuple = cap.read()
+    cap.release()
+    return result_tuple
+
+
 class ColorTracker:
 
     def __init__(self, lower_color_boundary, upper_color_boundary, hsv=True, tracking_mask=True, original=True,
