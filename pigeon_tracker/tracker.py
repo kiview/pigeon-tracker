@@ -2,19 +2,21 @@ import cv2
 
 
 class ColorTracker:
-    current_frame_number = 0
-    video = None
-    length = 0
-    fps = 0
 
-    hsv = True
-    tracking_mask = True
-    original = True
-    scaling = 1.0
+    def __init__(self, lower_color_boundary, upper_color_boundary, hsv=True, tracking_mask=True, original=True,
+                 scaling=1.0):
+        self.scaling = scaling
+        self.original = original
+        self.tracking_mask = tracking_mask
+        self.hsv = hsv
 
-    def __init__(self, lower_color_boundary, upper_color_boundary):
         self.lower_color_boundary = lower_color_boundary
         self.upper_color_boundary = upper_color_boundary
+
+        self.current_frame_number = 0
+        self.video = None
+        self.length = 0
+        self.fps = 0
 
     def track_video(self, file_name, initial_frame):
         self.current_frame_number = 0

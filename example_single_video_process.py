@@ -9,4 +9,6 @@ t.original = False
 t.tracking_mask = False
 t.scaling = 0.3
 
-t.track_video("example-videos/pigeon_video.mp4", 1000)
+result = t.track_video("example-videos/pigeon_video.mp4", 1000)
+
+print(result)
